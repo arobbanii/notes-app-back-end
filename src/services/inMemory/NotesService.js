@@ -30,7 +30,7 @@ class NotesService {
     return this._notes;
   }
 
-  getNotesById(id) {
+  getNoteById(id) {
     const note = this._notes.filter((n) => n.id === id)[0];
     if (!note) {
       throw new Error('Catatan tidak ditemukan');
@@ -38,7 +38,7 @@ class NotesService {
     return note;
   }
 
-  editNotesById(id, { title, body, tags }) {
+  editNoteById(id, { title, body, tags }) {
     const index = this._notes.findIndex((note) => note.id === id);
     if (index === -1) {
       throw new Error('Gagal memperbarui catatan. Id tidak ditemukan');
@@ -54,7 +54,7 @@ class NotesService {
     };
   }
 
-  deleteNotesById(id) {
+  deleteNoteById(id) {
     const index = this._notes.findIndex((note) => note.id === id);
     if (index === -1) {
       throw new Error('Catatan gagal dihapus. Id tidak ditemukan');
