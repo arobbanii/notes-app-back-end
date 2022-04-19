@@ -67,6 +67,7 @@ class NotesHandler {
 
   putNoteByIdHandler(request, h) {
     try {
+      this._validator.validateNotePayload(request.payload);
       const { id } = request.params;
       this._service.editNoteById(id, request.payload);
       return {
@@ -94,7 +95,7 @@ class NotesHandler {
     } catch (error) {
       const response = h.response({
         status: 'fail',
-        message: error.message,
+        message: 'Catatan gagal dihapus. Id tidak ditemukan',
       });
       response.code(404);
       return response;
