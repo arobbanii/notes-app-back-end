@@ -152,7 +152,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/notes/",
+					"raw": "http://localhost:5000/notes",
 					"protocol": "http",
 					"host": [
 						"localhost"
